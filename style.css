@@ -1,0 +1,440 @@
+﻿:root {
+  --bg: #070b11;
+  --bg-alt: #101a28;
+  --panel: rgba(17, 23, 32, 0.8);
+  --panel-strong: rgba(7, 13, 20, 0.9);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #edf4ff;
+  --muted: #c9d5e4;
+  --primary: #f5c451;
+  --primary-strong: #ef8d2d;
+  --secondary: #6ac8ff;
+  --accent: #f15b5b;
+  --shadow: 0 30px 50px rgba(0, 0, 0, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  background: rgba(10, 14, 22, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-small {
+  background: rgba(245, 196, 81, 0.12);
+  border-color: rgba(245, 196, 81, 0.5);
+  color: var(--primary);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #17120b;
+  box-shadow: 0 12px 30px rgba(239, 141, 45, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 8vw 3rem;
+  background-image: linear-gradient(rgba(7, 11, 17, 0.2), rgba(7, 11, 17, 0.8)),
+    url("./images/animevolleyball2.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 11, 17, 0.78), rgba(7, 11, 17, 0.25));
+}
+
+.hero-content,
+.hero-stats {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.eyebrow,
+.section-tag {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.subtitle {
+  margin-top: 1.2rem;
+  max-width: 34rem;
+  font-size: 1.06rem;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 220px;
+}
+
+.hero-stats > div {
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--line);
+  background: rgba(9, 16, 22, 0.58);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.stat-number {
+  display: block;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--primary);
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel {
+  position: relative;
+  padding: 6rem 8vw;
+}
+
+.panel.alt {
+  background: linear-gradient(180deg, rgba(17, 24, 31, 0.9), rgba(9, 13, 18, 0.9));
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.image-wrap {
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.05);
+}
+
+.text-wrap h2,
+.section-heading h2,
+.cta-box h2 {
+  margin: 0 0 1rem;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.text-wrap p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.player-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+ transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 196, 81, 0.7);
+}
+
+.player-image {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+}
+
+.player-one {
+  background-image: linear-gradient(rgba(7, 11, 17, 0.2), rgba(7, 11, 17, 0.7)),
+    url("./images/Шьоін.webp");
+}
+
+.player-two {
+  background-image: linear-gradient(rgba(7, 11, 17, 0.2), rgba(7, 11, 17, 0.7)),
+    url("./images/Кагеяма.webp");
+}
+
+.player-three {
+  background-image: linear-gradient(rgba(7, 11, 17, 0.2), rgba(7, 11, 17, 0.7)),
+    url("./images/Асахі.webp");
+}
+
+.player-four {
+  background-image: linear-gradient(rgba(7, 11, 17, 0.2), rgba(7, 11, 17, 0.7)),
+    url("./images/Цукісіма.webp");
+}
+
+.player-info {
+  padding: 1.2rem 1.25rem 1.5rem;
+}
+
+.player-info h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.player-info span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+}
+
+.moments {
+  background-image: linear-gradient(rgba(7, 11, 17, 0.55), rgba(7, 11, 17, 0.8)),
+    url("./images/ben-dutton-FKrcPEZfoNU-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.quote-block {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quote-block blockquote {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.2vw, 3rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.quote-author {
+  margin-top: 1rem;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cta-box {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.cta-box p {
+  color: var(--muted);
+}
+
+.footer {
+  padding: 1.5rem 2rem 3rem;
+  text-align: center;
+  color: var(--muted);
+  background: #060a12;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
+  .menu {
+    gap: 0.8rem 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding-top: 3rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
