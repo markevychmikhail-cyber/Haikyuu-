@@ -130,16 +130,23 @@ img {
   justify-content: space-between;
   gap: 2rem;
   padding: 4rem 8vw 3rem;
-  background-image: linear-gradient(rgba(7, 11, 17, 0.2), rgba(7, 11, 17, 0.8)),
-    url("./images/animevolleyball2.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: var(--bg);
   overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-video {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-overlay {
   position: absolute;
+  z-index: 1;
   inset: 0;
   background: linear-gradient(90deg, rgba(7, 11, 17, 0.78), rgba(7, 11, 17, 0.25));
 }
@@ -147,7 +154,7 @@ img {
 .hero-content,
 .hero-stats {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-content {
